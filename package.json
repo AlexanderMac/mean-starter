@@ -1,0 +1,26 @@
+{
+  "name": "mean-starter",
+  "version": "0.0.1",
+  "description": "MEAN-starter",
+  "private": true,
+  "engines": {
+    "node": "^8",
+    "npm": "^5"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderMac/mean-starter"
+  },
+  "author": "Alexander Mac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderMac/mean-starter/issues"
+  },
+  "homepage": "https://github.com/AlexanderMac/mean-starter"
+}
