@@ -1,0 +1,6 @@
+[submodule "client"]
+	path = client
+	url = ../angular-starter
+[submodule "server"]
+	path = server
+	url = ../express-starter
