@@ -11,7 +11,8 @@
     "start": "nodemon --config .nodemon.json ./src/app.js",
     "lint": "eslint -f stylish 'src/**/*.js' 'test/**/*.js'",
     "test": "NODE_ENV=test mocha",
-    "coverage": "nyc npm test"
+    "coverage": "nyc npm test",
+    "codecov": "npm run coverage && nyc report --reporter=text-lcov > ../coverage.lcov"
   },
   "dependencies": {
     "bluebird": "^3.5.2",
