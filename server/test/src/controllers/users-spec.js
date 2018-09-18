@@ -36,14 +36,15 @@ describe('controllers / users', () => {
         .get('/api/users/')
         .expect(expectedStatus)
         .expect('Content-Type', /json/)
-        .expect(res => nassert.assert(_.sortBy(res.body, '_id'), _.sortBy(expectedBody, '_id')));
+        .expect(res => nassert.assert(_.sortBy(res.body, 'userId'), _.sortBy(expectedBody, 'userId')));
     }
 
     it('should return status 200 and list of users', () => {
       let expectedStatus = 200;
       let expectedBody = _.map(initialUsers, user => {
         let userCopy = _.cloneDeep(user);
-        userCopy._id = user._id; // rewrite id after clone
+        userCopy.userId = user._id; // rewrite id after clone
+        delete userCopy._id;
         return userCopy;
       });
 
@@ -104,7 +105,8 @@ describe('controllers / users', () => {
       let userId = initialUsers[0]._id;
       let expectedStatus = 200;
       let expectedBody = _.cloneDeep(initialUsers[0]);
-      expectedBody._id = userId;
+      expectedBody.userId = userId;
+      delete expectedBody._id;
 
       return test({ userId, expectedStatus, expectedBody });
     });
@@ -194,7 +196,7 @@ describe('controllers / users', () => {
       };
       let expectedStatus = 201;
       let expectedBody = {
-        _id: '_mock_',
+        userId: '_mock_',
         name: 'new-user',
         email: 'new-user@mail.com'
       };
