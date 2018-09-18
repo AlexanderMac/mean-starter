@@ -1,32 +1,44 @@
 # mean-starter
 `MEAN` project template.
+- Check [angular-starter](https://github.com/AlexanderMac/angular-starter) if you need Angular starter.
+- Check [express-starter](https://github.com/AlexanderMac/express-starter) if you need Express starter.
 
 [![Build Status](https://travis-ci.org/AlexanderMac/mean-starter.svg?branch=master)](https://travis-ci.org/AlexanderMac/mean-starter)
 [![Code Coverage](https://codecov.io/gh/AlexanderMac/mean-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/AlexanderMac/mean-starter)
 
 ### Features
-- Advanced project structure with separation for routes, controllers, data-services.
-- RESTful User CRUD API.
-- Parameters validation.
-- Promises everywhere.
-- Configuration per environment.
-- Gulp tasks.
-- Functional and unit tests.
-- Clean code:)
+- Client:
+  - TypeScript
+  - Users CRUD
+  - Clean code:)
+- Server:
+  - Advanced project structure
+  - RESTful User CRUD API.
+  - Parameters validation.
+  - Promises everywhere.
+  - Configuration per environment.
+  - Functional and unit tests.
+  - Clean code:)
 
-### Used packages
- - Backend - `express`
- - Frontend - `angular v1.6`
- - CSS preprocessor - `stylus`
- - CSS framework - `boostrap`
- - View engine - `pug`
- - Database - `mongodb`
- - Promises - `bluebird`
- - Task runner - `gulp`
- - JS linter - `eslint`
- - Testing - `mocha`, `should`, `supertest`, `sinon`
- - Code coverage - `istanbul`
- - Logger - `winston, morgan`
+### Set
+- Client:
+  - **Framework**: Angular v6
+  - **Language**: TypeScript v2
+  - **Build tool**: Webpack v4
+  - **CSS preprocessor**: stylus
+  - **CSS framework**: boostrap v4
+  - **Template engine**: pug
+  - **Linters**: tslint, pug-lint
+- Server:
+  - **Backend**: express
+  - **View engine**: pug
+  - **Database**: mongodb
+  - **Promises**: bluebird
+  - **Linter**: eshint
+  - **Testing**: mocha, should, supertest, sinon
+  - **Logger**: winston, morgan
+  - **Configuration**: n-conf
+  - **Custom errors**: n-custom-errors
 
 ### How to use
 ```sh
@@ -40,7 +52,7 @@ $ cd mean-starter && rm -rf .git && git init
 $ npm i
 
 # Configure database:
-# Open `./config/environment/development.json` and change `db` key to your own database connection string.
+# Open `./server/config/environment/development.json` and change `db` key to your own database connection string.
 
 # Start app:
 $ npm start
@@ -49,56 +61,43 @@ $ npm start
 ### Commands
 
 ```sh
-# Install dependencies
+# Install all dependencies
 $ npm i
 
+# Update all dependencies
+$ npm run update-all
+
+# Show all outdated dependencies
+$ npm run outdated-all
+
 # Build frontend:
-$ npm run build # build development version
+$ npm run build            # build development version
 $ npm run build:production # build production version
 
-# Run tests (one of the commands):
-$ gulp test # run all tests
-$ gulp test --grep 'test-name'
-$ gulp test --filter 'path to test file/folder'
+# Run all tests:
+$ npm test
 
 # Run code coverage tool:
-$ gulp coverage
+$ npm run coverage
 
-# Run jshint tool (one of the commands):
-$ gulp lint # check all sources
-$ gulp lint --filter 'path to source file/folder'
-$ gulp lint-server # check server sources
-$ gulp lint-test # check test sources
+# Run linter tool:
+$ npm run lint
 
-# Start app and watch for changes:
+# Start server and watch for server and client changes:
 $ npm start
 ```
 
 ### Service structure
-- [config] - app configuration options
 - [client]
-  - [app]
-    - [controllers]
-    - [directives]
-    - [resources]
-    - [util]
-  - [css]
-  - [images]
-  - [views]
+  - [config] - client configuration options
+  - [src] - client source files
 - [server]
-  - [controllers] - controllers
-  - [db] - database manager and models
-  - [data-services] - local data services
-  - [routes] - API end points
-  - [services] - remote service wrappers
-  - [util]
-    - [validation-util] - validation utils
-    - [logger] - app logger
-- [tasks] - gulp tasks
-- [test] - unit and functional tests
+  - [config] - server configuration options
+  - [src] - server source files
+  - [test] - unit and functional tests
 
 ### Author
 Alexander Mac
 
 ### License
-[MIT License](LICENSE)
+[MIT License](license)

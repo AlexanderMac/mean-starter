@@ -1,0 +1,51 @@
+{
+  "name": "express-starter",
+  "version": "1.0.0",
+  "description": "Express-starter",
+  "private": true,
+  "engines": {
+    "node": "^8",
+    "npm": "^5"
+  },
+  "scripts": {
+    "start": "nodemon --config .nodemon.json ./src/app.js",
+    "lint": "eslint -f stylish 'src/**/*.js' 'test/**/*.js'",
+    "test": "NODE_ENV=test mocha",
+    "coverage": "nyc npm test"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.2",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "helmet": "^3.13.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.2.15",
+    "morgan": "^1.9.1",
+    "n-custom-errors": "^2.0.0",
+    "n-params-processor": "^2.5.1",
+    "nconf": "^0.10.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "mocha": "^5.2.0",
+    "n-assert": "^3.1.0",
+    "nodemon": "^1.18.4",
+    "nyc": "^13.0.1",
+    "should": "^13.2.3",
+    "sinon": "^6.3.4",
+    "supertest": "^3.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderMac/express-starter"
+  },
+  "author": "Alexander Mac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderMac/express-starter/issues"
+  },
+  "homepage": "https://github.com/AlexanderMac/express-starter"
+}

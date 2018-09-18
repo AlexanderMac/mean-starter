@@ -1,0 +1,69 @@
+{
+  "name": "angular-starter",
+  "version": "1.0.0",
+  "description": "angular-starter",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config ./config/webpack/webpack.development",
+    "build:production": "webpack --config ./config/webpack/webpack.production",
+    "watch": "webpack --config ./config/webpack/webpack.development --watch",
+    "lint-scripts": "tslint -c tslint.json -p tsconfig.json -t stylish 'src/**/*.ts'",
+    "lint-views": "pug-lint src/app/**/*.pug",
+    "lint": "npm run lint-scripts && npm run lint-views"
+  },
+  "dependencies": {
+    "@angular/common": "^6.1.7",
+    "@angular/compiler": "^6.1.7",
+    "@angular/core": "^6.1.7",
+    "@angular/forms": "^6.1.7",
+    "@angular/platform-browser": "^6.1.7",
+    "@angular/platform-browser-dynamic": "^6.1.7",
+    "@angular/router": "^6.1.7",
+    "bootstrap": "^4.1.3",
+    "core-js": "^2.5.7",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "popper.js": "^1.14.4",
+    "rxjs": "^6.3.2",
+    "rxjs-compat": "^6.3.2",
+    "spinkit": "^1.2.5",
+    "toastr": "^2.1.4",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "@types/core-js": "^2.5.0",
+    "@types/lodash": "^4.14.116",
+    "@types/node": "^10.10.1",
+    "@types/toastr": "^2.1.35",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "0.4.1",
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "pug": "^2.0.3",
+    "pug-html-loader": "^1.1.5",
+    "pug-lint": "^2.5.0",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.23.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4",
+    "webpack-notifier": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderMac/angular-starter"
+  },
+  "author": "Alexander Mac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexanderMac/angular-starter/issues"
+  },
+  "homepage": "https://github.com/AlexanderMac/angular-starter"
+}
