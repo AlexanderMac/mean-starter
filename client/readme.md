@@ -11,7 +11,7 @@
 - Clean code:)
 
 ### Set
-- **Framework**: Angular v6
+- **Framework**: Angular v7
 - **Language**: TypeScript v2
 - **Build tool**: Webpack v4
 - **CSS preprocessor**: stylus
