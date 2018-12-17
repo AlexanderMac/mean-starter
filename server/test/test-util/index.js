@@ -1,11 +1,14 @@
 'use strict';
 
-const _         = require('lodash');
-const Promise   = require('bluebird');
-const mongoose  = require('mongoose');
-const mongoDb   = require('../../src/db');
+const _        = require('lodash');
+const mongoose = require('mongoose');
+const nassert  = require('n-assert');
+const sinon    = require('sinon');
 require('../../src/util/errors');
 require('../../src/util/promisify');
+const mongoDb  = require('../../src/db');
+
+nassert.initSinon(sinon);
 
 before(async function() {
   this.timeout(0);

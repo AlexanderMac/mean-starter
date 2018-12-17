@@ -9,8 +9,8 @@
   },
   "scripts": {
     "postinstall": "npm install --prefix server && npm install --prefix client",
-    "update-all": "npm update && npm update --prefix server && npm update --prefix client",
-    "outdated-all": "(npm outdated || true) && (npm outdated --prefix server || true) && (npm outdated --prefix client || true)",
+    "update": "npm update && npm update --prefix server && npm update --prefix client",
+    "outdated": "(npm outdated || true) && (npm outdated --prefix server || true) && (npm outdated --prefix client || true)",
     "build": "npm run build --prefix client",
     "build:production": "npm run build:production --prefix client",
     "start": "concurrently --kill-others \"npm start --prefix server\" \"npm run watch  --prefix client\"",
@@ -21,7 +21,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "concurrently": "^4.0.1"
+    "concurrently": "^4.1.0"
   },
   "repository": {
     "type": "git",
