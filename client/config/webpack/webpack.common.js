@@ -111,7 +111,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'raw-loader',
           MiniCssExtractPlugin.loader,
           'css-loader'
         ]
@@ -149,10 +148,6 @@ module.exports = {
       helpers.root('src', 'app')
     ),
 
-    new webpack.DefinePlugin({
-      SRVC_TYPE: JSON.stringify(process.env.SRVC_TYPE || 'local-storage')
-    }),
-
     new HtmlPlugin({
       template: 'src/public/index.pug'
     }),
@@ -164,7 +159,7 @@ module.exports = {
 
     new ProgressBarPlugin({
       format: 'Build [:bar] :percent (:elapsed seconds)',
-      clear: false,
+      clear: false
     }),
 
     new NotifierPlugin({
