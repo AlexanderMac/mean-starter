@@ -2,11 +2,11 @@
 
 const express = require('express');
 const config  = require('../config/environment');
-const db      = require('./db');
-const logger  = require('./util/logger');
+const db      = require('./_common/db');
+const logger  = require('./_common/util/logger');
 
-require('./util/errors');
-require('./util/promisify');
+require('./_common/util/errors');
+require('./_common/util/promisify');
 
 const app = express();
 require('./express')(app);

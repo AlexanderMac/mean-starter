@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const config   = require('../../config/environment');
+const config   = require('../../../config/environment');
 const logger   = require('../util/logger');
 require('../util/promisify');
 
@@ -9,7 +9,7 @@ mongoose.Promise = Promise;
 
 mongoose.models = {};
 
-require('./models/user');
+require('../../users/model');
 
 const conn = mongoose.connection;
 

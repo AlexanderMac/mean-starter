@@ -4,9 +4,9 @@ const _        = require('lodash');
 const mongoose = require('mongoose');
 const nassert  = require('n-assert');
 const sinon    = require('sinon');
-require('../../src/util/errors');
-require('../../src/util/promisify');
-const mongoDb  = require('../../src/db');
+require('../../src/_common/util/errors');
+require('../../src/_common/util/promisify');
+const mongoDb  = require('../../src/_common/db');
 
 nassert.initSinon(sinon);
 

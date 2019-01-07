@@ -1,11 +1,11 @@
 'use strict';
 
 const path   = require('path');
-const config = require('../../config/environment');
-const logger = require('../util/logger');
+const config = require('../config/environment');
+const logger = require('./_common/util/logger');
 
 module.exports = (app) => {
-  require('./users')(app);
+  require('./users/routes')(app);
 
   app.get('*', (req, res) => {
     let indexPage = path.join(config.get('publicPath'), 'index.html');
@@ -32,6 +32,5 @@ module.exports = (app) => {
     err = new Error('Unexpected server error');
     err.statusCode = err.statusCode || 500;
     next(err);
-    // TODO: how to terminate the app?
   });
 };
