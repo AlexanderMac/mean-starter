@@ -6,7 +6,6 @@ am-spinner(*ngIf="isLoading")
   p
     strong Email:
     a(href="mailto:{{ user.email }}") {{ user.email }}
-
   .buttons.text-right
     a.btn.btn-light(routerLink="/users") Cancel
     a.btn.btn-primary(routerLink="/users/{{ user.userId }}/edit") Edit

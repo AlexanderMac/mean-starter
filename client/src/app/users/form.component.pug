@@ -42,4 +42,7 @@ am-spinner(*ngIf="isLoading")
 
     .buttons.text-right
       a.btn.btn-light(routerLink="/users") Cancel
-      button.btn.btn-primary(type="submit" '[disabled]'="!userForm.form.valid || isSaving") Save
+      button.btn.btn-primary(
+        type="submit"
+        '[disabled]'="!userForm.form.valid || isSaving"
+      ) Save
