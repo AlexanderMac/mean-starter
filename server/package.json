@@ -1,7 +1,7 @@
 {
-  "name": "express-starter",
-  "version": "1.0.0",
-  "description": "Express-starter",
+  "name": "mean-starter",
+  "version": "1.1.0",
+  "description": "MEAN-starter",
   "private": true,
   "engines": {
     "node": "^8",
@@ -41,12 +41,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlexanderMac/express-starter"
+    "url": "https://github.com/AlexanderMac/mean-starter"
   },
   "author": "Alexander Mac",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlexanderMac/express-starter/issues"
+    "url": "https://github.com/AlexanderMac/mean-starter/issues"
   },
-  "homepage": "https://github.com/AlexanderMac/express-starter"
+  "homepage": "https://github.com/AlexanderMac/mean-starter"
 }
