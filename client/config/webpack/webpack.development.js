@@ -1,5 +1,3 @@
-'use strict';
-
 const webpackMerge      = require('webpack-merge');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const commonConfig      = require('./webpack.common.js');
