@@ -12,7 +12,8 @@ import { UsersModule } from './users/module';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      { path: '', redirectTo: '/home', pathMatch: 'full' }
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: '**', redirectTo: '/404' }
     ]),
     HomeModule,
     UsersModule
