@@ -22,19 +22,19 @@
 
 ### Set
 - Client:
-  - **Framework**: Angular v6
+  - **Framework**: Angular v8
   - **Language**: TypeScript v2
   - **Build tool**: Webpack v4
   - **CSS preprocessor**: stylus
   - **CSS framework**: boostrap v4
   - **Template engine**: pug
-  - **Linters**: tslint, pug-lint
+  - **Linters**: eslint, pug-lint
 - Server:
   - **Backend**: express
   - **View engine**: pug
   - **Database**: mongodb
   - **Promises**: bluebird
-  - **Linter**: eshint
+  - **Linter**: eslint
   - **Testing**: mocha, should, supertest, sinon
   - **Logger**: winston, morgan
   - **Configuration**: n-conf
@@ -83,17 +83,17 @@ $ npm run coverage
 # Run linter tool:
 $ npm run lint
 
-# Start server and watch for server and client changes:
+# Start server, build client, and watch for server and client changes:
 $ npm start
 ```
 
 ### Service structure
 - [client]
-  - [config] - client configuration options
-  - [src] - client source files
+  - [config] - webpack configuration files
+  - [src] - source files
 - [server]
   - [config] - server configuration options
-  - [src] - server source files
+  - [src] - source files
   - [test] - unit and functional tests
 
 ### Author
