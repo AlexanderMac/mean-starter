@@ -6,7 +6,7 @@ import { User }                   from './model';
 
 @Component({
   selector: 'am-user-form',
-  templateUrl: './form.component.pug'
+  template: require('./form.component.pug')
 })
 export class UserFormComponent implements OnInit {
   isLoading: boolean;
@@ -37,7 +37,7 @@ export class UserFormComponent implements OnInit {
       .subscribe(
         user => this.user = user,
         err => {
-          this.ntfsSrvc.error('Unable to load user');
+          this.ntfsSrvc.error('Unable to load user', err);
           this.router.navigate(['/users']);
         },
         () => this.isLoading = false

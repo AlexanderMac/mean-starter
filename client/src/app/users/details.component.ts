@@ -6,7 +6,7 @@ import { User }                   from './model';
 
 @Component({
   selector: 'am-user-details',
-  templateUrl: './details.component.pug'
+  template: require('./details.component.pug')
 })
 export class UserDetailsComponent implements OnInit {
   isLoading: boolean;
@@ -33,7 +33,7 @@ export class UserDetailsComponent implements OnInit {
       .subscribe(
         user => this.user = user,
         err => {
-          this.ntfsSrvc.error('Unable to load user');
+          this.ntfsSrvc.error('Unable to load user', err);
           this.router.navigate(['/users']);
         },
         () => this.isLoading = false
