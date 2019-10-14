@@ -1,11 +1,9 @@
-'use strict';
-
-const _        = require('lodash');
+const _ = require('lodash');
 const mongoose = require('mongoose');
-const request  = require('supertest');
-const should   = require('should');
-const nassert  = require('n-assert');
-const app      = require('../../src/app');
+const request = require('supertest');
+const should = require('should');
+const nassert = require('n-assert');
+const app = require('../../src/app');
 
 const User = mongoose.model('user');
 

@@ -1,9 +1,7 @@
-'use strict';
-
 const express = require('express');
-const config  = require('../config/environment');
-const db      = require('./_common/db');
-const logger  = require('./_common/util/logger');
+const config = require('../config/environment');
+const db = require('./_common/db');
+const logger = require('./_common/util/logger');
 
 require('./_common/util/errors');
 require('./_common/util/promisify');

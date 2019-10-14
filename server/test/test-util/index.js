@@ -1,12 +1,10 @@
-'use strict';
-
-const _        = require('lodash');
+const _ = require('lodash');
 const mongoose = require('mongoose');
-const nassert  = require('n-assert');
-const sinon    = require('sinon');
+const nassert = require('n-assert');
+const sinon = require('sinon');
 require('../../src/_common/util/errors');
 require('../../src/_common/util/promisify');
-const mongoDb  = require('../../src/_common/db');
+const mongoDb = require('../../src/_common/db');
 
 nassert.initSinon(sinon);
 

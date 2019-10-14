@@ -1,10 +1,8 @@
-'use strict';
-
-const express    = require('express');
-const morgan     = require('morgan');
-const helmet     = require('helmet');
+const express = require('express');
+const morgan = require('morgan');
+const helmet = require('helmet');
 const bodyParser = require('body-parser');
-const config     = require('../config/environment');
+const config = require('../config/environment');
 
 module.exports = (app) => {
   app.set('views', config.get('viewsPath'));

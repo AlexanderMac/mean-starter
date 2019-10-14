@@ -1,7 +1,5 @@
-'use strict';
-
-const _          = require('lodash');
-const mongoose   = require('mongoose');
+const _ = require('lodash');
+const mongoose = require('mongoose');
 const commonUtil = require('../_common/util');
 
 const User = mongoose.model('user');

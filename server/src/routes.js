@@ -1,6 +1,4 @@
-'use strict';
-
-const path   = require('path');
+const path = require('path');
 const config = require('../config/environment');
 const logger = require('./_common/util/logger');
 

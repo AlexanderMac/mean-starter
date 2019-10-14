@@ -1,8 +1,6 @@
-'use strict';
-
 const mongoose = require('mongoose');
-const config   = require('../../../config/environment');
-const logger   = require('../util/logger');
+const config = require('../../../config/environment');
+const logger = require('../util/logger');
 require('../util/promisify');
 
 mongoose.Promise = Promise;

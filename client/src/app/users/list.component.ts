@@ -1,9 +1,9 @@
-import * as _                  from 'lodash';
-import { Component, OnInit }   from '@angular/core';
-import { Router }              from '@angular/router';
+import * as _ from 'lodash';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NotificationService } from '../_core/notification.service';
-import { UserService }         from './service';
-import { User }                from './model';
+import { UserService } from './service';
+import { User } from './model';
 
 @Component({
   selector: 'am-user-list',
@@ -30,9 +30,9 @@ export class UserListComponent implements OnInit {
       .getUsers()
       .subscribe(
         users => this.users = users,
-        () => this.ntfsSrvc.error('Unable to load users'),
+        (err: Error) => this.ntfsSrvc.warningOrError('Unable to load users', err),
         () => this.isLoading = false
-    );
+      );
   }
 
   userDetails(user: User): void {
@@ -57,7 +57,7 @@ export class UserListComponent implements OnInit {
           _.remove(this.users, user);
           this.ntfsSrvc.info('User deleted successfully');
         },
-        () => this.ntfsSrvc.error('Unable to delete user'),
+        (err: Error) => this.ntfsSrvc.warningOrError('Unable to delete user', err),
         () => this.isSaving = false);
   }
 }
