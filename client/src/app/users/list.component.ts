@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { NotificationService } from '../_core/notification.service';
 import { UserService } from './service';
 import { User } from './model';
@@ -9,10 +11,11 @@ import { User } from './model';
   selector: 'am-user-list',
   template: require('./list.component.pug')
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit, OnDestroy {
   isLoading: boolean;
   isSaving: boolean;
   users: User[];
+  subscriptions = new Subscription();
 
   constructor(
     private router: Router,
@@ -21,18 +24,23 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this._loadUsers();
+    this.loadUsers();
   }
 
-  _loadUsers(): void {
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+  loadUsers(): void {
     this.isLoading = true;
-    this.userSrvc
+    let subscription = this.userSrvc
       .getUsers()
+      .pipe(finalize(() => this.isLoading = false))
       .subscribe(
         users => this.users = users,
-        (err: Error) => this.ntfsSrvc.warningOrError('Unable to load users', err),
-        () => this.isLoading = false
+        (err: Error) => this.ntfsSrvc.warningOrError('Unable to load users', err)
       );
+    this.subscriptions.add(subscription);
   }
 
   userDetails(user: User): void {
@@ -50,14 +58,16 @@ export class UserListComponent implements OnInit {
     }
 
     this.isSaving = true;
-    this.userSrvc
+    let subscription = this.userSrvc
       .deleteUser(user.userId)
+      .pipe(finalize(() => this.isSaving = false))
       .subscribe(
         () => {
           _.remove(this.users, user);
           this.ntfsSrvc.info('User deleted successfully');
         },
-        (err: Error) => this.ntfsSrvc.warningOrError('Unable to delete user', err),
-        () => this.isSaving = false);
+        (err: Error) => this.ntfsSrvc.warningOrError('Unable to delete user', err)
+      );
+    this.subscriptions.add(subscription);
   }
 }
