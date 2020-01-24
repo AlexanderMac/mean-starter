@@ -9,5 +9,3 @@ customErrors.registerError('ObjectNotFound', 404, '${objectName} not found');
 customErrors.registerError('ThirdPartyService', 423);
 customErrors.registerError('UnauthorizedRequest', 401);
 customErrors.registerError('UnprocessableRequest', 422, '${paramName} ${errMsg}');
-
-paramsProc.registerCustomErrorType(customErrors.getUnprocessableRequestErrorType());

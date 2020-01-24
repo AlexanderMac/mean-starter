@@ -1,4 +1,5 @@
 const path = require('path');
+const paramsProc = require('n-params-processor');
 const config = require('../config/environment');
 const logger = require('./_common/util/logger');
 
@@ -12,9 +13,14 @@ module.exports = (app) => {
 
   // eslint-disable-next-line max-params
   app.use((err, req, res, next) => {
+    if (err instanceof paramsProc.ParamsProcessorError) {
+      return res.status(422).send({ reason: err.message });
+    }
     if (err.statusCode < 500) {
-      let errData = { reason: err.message, info: err.info };
-      return res.status(err.statusCode).send(errData);
+      return res.status(err.statusCode).send({
+        reason: err.message,
+        info: err.info
+      });
     }
 
     // istanbul ignore next
@@ -27,8 +33,8 @@ module.exports = (app) => {
         logger.error('Unexpected server error', err);
         break;
     }
+
     err = new Error('Unexpected server error');
-    err.statusCode = err.statusCode || 500;
-    next(err);
+    res.status(err.statusCode || 500).send({ reason: 'Unexpected server error' });
   });
 };
