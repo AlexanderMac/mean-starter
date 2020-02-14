@@ -1,5 +1,4 @@
 const customErrors = require('n-custom-errors');
-const paramsProc = require('n-params-processor');
 
 customErrors.registerError('AccessDenied', 403);
 customErrors.registerError('BusinessLogic', 422);

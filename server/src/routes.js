@@ -11,7 +11,7 @@ module.exports = (app) => {
     res.sendFile(indexPage);
   });
 
-  // eslint-disable-next-line max-params
+  // eslint-disable-next-line no-unused-vars, max-params
   app.use((err, req, res, next) => {
     if (err instanceof paramsProc.ParamsProcessorError) {
       return res.status(422).send({ reason: err.message });
