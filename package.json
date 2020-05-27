@@ -21,7 +21,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.2.0"
   },
   "repository": {
     "type": "git",
