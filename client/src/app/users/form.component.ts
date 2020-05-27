@@ -42,7 +42,9 @@ export class UserFormComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     let subscription = this.userSrvc
       .getUser(this.userId)
-      .pipe(finalize(() => this.isLoading = false))
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
       .subscribe(
         user => this.user = user,
         (err: Error) => {
@@ -57,7 +59,9 @@ export class UserFormComponent implements OnInit, OnDestroy {
     this.isSaving = true;
     let fn = this.userId ? 'updateUser' : 'createUser';
     let subscription = this.userSrvc[fn](this.user)
-      .pipe(finalize(() => this.isSaving = false))
+      .pipe(
+        finalize(() => this.isSaving = false)
+      )
       .subscribe(
         () => {
           this.ntfsSrvc.info(`User ${this.userId ? 'updated' : 'created'} successfully`);

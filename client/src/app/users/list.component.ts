@@ -35,7 +35,9 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     let subscription = this.userSrvc
       .getUsers()
-      .pipe(finalize(() => this.isLoading = false))
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
       .subscribe(
         users => this.users = users,
         (err: Error) => this.ntfsSrvc.warningOrError('Unable to load users', err)
@@ -60,7 +62,9 @@ export class UserListComponent implements OnInit, OnDestroy {
     this.isSaving = true;
     let subscription = this.userSrvc
       .deleteUser(user.userId)
-      .pipe(finalize(() => this.isSaving = false))
+      .pipe(
+        finalize(() => this.isSaving = false)
+      )
       .subscribe(
         () => {
           _.remove(this.users, user);

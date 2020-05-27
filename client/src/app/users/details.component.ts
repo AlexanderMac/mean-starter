@@ -38,7 +38,9 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     let subscription = this.userSrvc
       .getUser(this.userId)
-      .pipe(finalize(() => this.isLoading = false))
+      .pipe(
+        finalize(() => this.isLoading = false)
+      )
       .subscribe(
         user => this.user = user,
         (err: Error) => {

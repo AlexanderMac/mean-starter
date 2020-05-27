@@ -16,10 +16,10 @@ am-spinner(*ngIf="isLoading")
           name="name"
           type="text"
           placeholder="Name"
+          #name="ngModel"
           required="true"
           '[(ngModel)]'="user.name"
           '[disabled]'="isSaving"
-          #name="ngModel"
           '[ngClass]'="{ 'is-invalid': name.invalid && (name.dirty || name.touched)}"
         )
         .invalid-feedback Name is required
@@ -33,9 +33,9 @@ am-spinner(*ngIf="isLoading")
           type="email"
           placeholder="Email"
           required="true"
+          #email="ngModel"
           '[(ngModel)]'="user.email"
           '[disabled]'="isSaving"
-          #email="ngModel"
           '[ngClass]'="{ 'is-invalid': email.invalid && (email.dirty || email.touched)}"
         )
         .invalid-feedback Email is required
