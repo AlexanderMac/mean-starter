@@ -14,11 +14,11 @@ module.exports = (app) => {
   // eslint-disable-next-line no-unused-vars, max-params
   app.use((err, req, res, next) => {
     if (err instanceof paramsProc.ParamsProcessorError) {
-      return res.status(422).send({ reason: err.message });
+      return res.status(422).send({ message: err.message });
     }
     if (err.statusCode < 500) {
       return res.status(err.statusCode).send({
-        reason: err.message,
+        message: err.message,
         info: err.info
       });
     }
@@ -35,6 +35,6 @@ module.exports = (app) => {
     }
 
     err = new Error('Unexpected server error');
-    res.status(err.statusCode || 500).send({ reason: 'Unexpected server error' });
+    res.status(err.statusCode || 500).send({ message: 'Unexpected server error' });
   });
 };
