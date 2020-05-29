@@ -79,21 +79,21 @@ describe('users / controller', () => {
         .expect(res => nassert.assert(res.body, expectedBody));
     }
 
-    it('should return status 422 when req.params._id is invalid', () => {
+    it('should return status 422 when req.params.userId is invalid', () => {
       let userId = 'Invalid Id';
       let expectedStatus = 422;
       let expectedBody = {
-        reason: '_id must be a valid ObjectId'
+        message: 'userId must be a valid ObjectId'
       };
 
       return test({ userId, expectedStatus, expectedBody });
     });
 
-    it('should return status 404 when user is not found by req.params._id', () => {
+    it('should return status 404 when user is not found by req.params.userId', () => {
       let userId = nassert.getObjectId();
       let expectedStatus = 404;
       let expectedBody = {
-        reason: 'user is not found'
+        message: 'user is not found'
       };
 
       return test({ userId, expectedStatus, expectedBody });
@@ -144,7 +144,7 @@ describe('users / controller', () => {
       let userData;
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'name is required'
+        message: 'name is required'
       };
 
       return test({ userData, expectedStatus, expectedBody });
@@ -156,7 +156,7 @@ describe('users / controller', () => {
       };
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'name is required'
+        message: 'name is required'
       };
 
       return test({ userData, expectedStatus, expectedBody });
@@ -168,7 +168,7 @@ describe('users / controller', () => {
       };
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'email is required'
+        message: 'email is required'
       };
 
       return test({ userData, expectedStatus, expectedBody });
@@ -181,7 +181,7 @@ describe('users / controller', () => {
       };
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'email must be a valid email address'
+        message: 'email must be a valid email address'
       };
 
       return test({ userData, expectedStatus, expectedBody });
@@ -239,7 +239,7 @@ describe('users / controller', () => {
         });
     }
 
-    it('should return status 422 when req.params._id is invalid', () => {
+    it('should return status 422 when req.params.userId is invalid', () => {
       let userId = 'InvalidId';
       let userData = {
         name: 'user1-new',
@@ -247,7 +247,7 @@ describe('users / controller', () => {
       };
       let expectedStatus = 422;
       let expectedBody = {
-        reason: '_id must be a valid ObjectId'
+        message: 'userId must be a valid ObjectId'
       };
 
       return test({ userId, userData, expectedStatus, expectedBody });
@@ -258,7 +258,7 @@ describe('users / controller', () => {
       let userData;
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'name is required'
+        message: 'name is required'
       };
 
       return test({ userId, userData, expectedStatus, expectedBody });
@@ -271,7 +271,7 @@ describe('users / controller', () => {
       };
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'name is required'
+        message: 'name is required'
       };
 
       return test({ userId, userData, expectedStatus, expectedBody });
@@ -284,7 +284,7 @@ describe('users / controller', () => {
       };
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'email is required'
+        message: 'email is required'
       };
 
       return test({ userId, userData, expectedStatus, expectedBody });
@@ -298,13 +298,13 @@ describe('users / controller', () => {
       };
       let expectedStatus = 422;
       let expectedBody = {
-        reason: 'email must be a valid email address'
+        message: 'email must be a valid email address'
       };
 
       return test({ userId, userData, expectedStatus, expectedBody });
     });
 
-    it('should return status 404 when user is not found by req.params._id', () => {
+    it('should return status 404 when user is not found by req.params.userId', () => {
       let userId = nassert.getObjectId();
       let userData = {
         name: 'user1-new',
@@ -312,7 +312,7 @@ describe('users / controller', () => {
       };
       let expectedStatus = 404;
       let expectedBody = {
-        reason: 'user is not found'
+        message: 'user is not found'
       };
 
       return test({ userId, userData, expectedStatus, expectedBody });
@@ -366,21 +366,21 @@ describe('users / controller', () => {
         });
     }
 
-    it('should return status 422 when req.params._id is invalid', () => {
+    it('should return status 422 when req.params.userId is invalid', () => {
       let userId = 'Invalid Id';
       let expectedStatus = 422;
       let expectedBody = {
-        reason: '_id must be a valid ObjectId'
+        message: 'userId must be a valid ObjectId'
       };
 
       return test({ userId, expectedStatus, expectedBody });
     });
 
-    it('should return status 404 when user is not found by req.params._id', () => {
+    it('should return status 404 when user is not found by req.params.userId', () => {
       let userId = nassert.getObjectId();
       let expectedStatus = 404;
       let expectedBody = {
-        reason: 'user is not found'
+        message: 'user is not found'
       };
 
       return test({ userId, expectedStatus, expectedBody });
