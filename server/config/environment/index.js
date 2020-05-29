@@ -1,10 +1,8 @@
-'use strict';
-
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-const _     = require('lodash');
+const _ = require('lodash');
 const nconf = require('nconf');
-const path  = require('path');
+const path = require('path');
 
 const envConfigFilepath = path.join(__dirname, process.env.NODE_ENV + '.json');
 const defConfigFilepath = path.join(__dirname, 'default.json');
