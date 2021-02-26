@@ -1,43 +1,40 @@
 {
   "name": "mean-starter",
-  "version": "1.2.1",
-  "description": "MEAN-starter",
+  "version": "0.0.1",
+  "description": "mean-starter",
   "private": true,
   "engines": {
-    "node": "^8",
-    "npm": "^5"
+    "node": ">=12",
+    "npm": ">=7"
   },
   "scripts": {
     "start": "nodemon --config .nodemon.json ./src/app.js",
     "lint": "eslint -f stylish 'src/**/*.js' 'test/**/*.js'",
     "test": "NODE_ENV=test mocha",
     "coverage": "nyc npm test",
-    "codecov": "npm run coverage && nyc report --reporter=text-lcov > ../coverage.lcov"
+    "coverage-gh": "nyc --reporter=lcov npm test && codecov"
   },
   "dependencies": {
-    "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.5",
     "express": "^4.17.1",
-    "helmet": "^3.22.0",
+    "helmet": "^4.4.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.9.16",
     "morgan": "^1.10.0",
-    "n-custom-errors": "^3.0.1",
     "n-params-processor": "^5.0.1",
-    "nconf": "^0.10.0",
-    "serve-favicon": "^2.5.0",
+    "nconf": "^0.11.2",
+    "pug": "^3.0.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^7.1.0",
-    "mocha": "^7.2.0",
+    "mocha": "^8.3.0",
     "n-assert": "^5.0.2",
     "nodemon": "^2.0.4",
     "nyc": "^15.0.1",
     "should": "^13.2.3",
     "sinon": "^9.0.2",
-    "supertest": "^4.0.2"
+    "supertest": "^6.1.3"
   },
   "repository": {
     "type": "git",
