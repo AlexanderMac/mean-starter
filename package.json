@@ -4,8 +4,8 @@
   "description": "MEAN-starter",
   "private": true,
   "engines": {
-    "node": "^8",
-    "npm": "^5"
+    "node": ">=10",
+    "npm": ">=7"
   },
   "scripts": {
     "postinstall": "npm install --prefix server && npm install --prefix client",
@@ -19,9 +19,8 @@
     "coverage": "npm run coverage --prefix server",
     "codecov": "npm run codecov --prefix server"
   },
-  "dependencies": {},
   "devDependencies": {
-    "concurrently": "^5.2.0"
+    "concurrently": "^6.0.0"
   },
   "repository": {
     "type": "git",
