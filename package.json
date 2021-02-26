@@ -1,10 +1,10 @@
 {
   "name": "mean-starter",
-  "version": "1.2.1",
+  "version": "0.0.1",
   "description": "MEAN-starter",
   "private": true,
   "engines": {
-    "node": ">=10",
+    "node": ">=12",
     "npm": ">=7"
   },
   "scripts": {
