@@ -72,8 +72,8 @@ $ npm run update-all
 $ npm run outdated-all
 
 # Build frontend:
-$ npm run build            # build development version
-$ npm run build:production # build production version
+$ npm run build      # build development version
+$ npm run build:prod # build production version
 
 # Run all tests:
 $ npm test

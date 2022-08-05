@@ -4,23 +4,23 @@
   "description": "MEAN-starter",
   "private": true,
   "engines": {
-    "node": ">=14",
-    "npm": ">=7"
+    "node": ">=16",
+    "pnpm": ">=7"
   },
   "scripts": {
-    "postinstall": "npm install --prefix server && npm install --prefix client",
-    "update-all": "npm update && npm update --prefix server && npm update --prefix client",
-    "outdated-all": "(npm outdated || true) && (npm outdated --prefix server || true) && (npm outdated --prefix client || true)",
-    "build": "npm run build --prefix client",
-    "build:production": "npm run build:production --prefix client",
-    "start": "concurrently --kill-others \"npm start --prefix server\" \"npm run watch  --prefix client\"",
-    "lint": "npm run lint --prefix server && npm run lint --prefix client",
-    "test": "npm test --prefix server",
-    "coverage": "npm run coverage --prefix server",
-    "coverage-gh": "npm run coverage-gh --prefix server"
+    "postinstall": "pnpm --filter ./server install && pnpm --filter ./client install",
+    "update-all": "pnpm update && pnpm --filter ./server update && pnpm --filter ./client update",
+    "outdated-all": "(pnpm outdated || true) && (pnpm --filter ./server outdated || true) && (pnpm --filter ./client outdated || true)",
+    "build": "pnpm --filter ./client build",
+    "build:prod": "pnpm --filter ./client build:production",
+    "start": "concurrently --kill-others \"pnpm --filter ./server start\" \"pnpm --filter ./client watch\"",
+    "lint": "pnpm --filter ./server lint && pnpm --filter ./client lint",
+    "test": "pnpm --filter ./server test",
+    "coverage": "pnpm --filter ./server coverage",
+    "coverage-gh": "pnpm --filter ./server coverage-gh"
   },
   "devDependencies": {
-    "concurrently": "^6.0.0"
+    "concurrently": "^7.3.0"
   },
   "repository": {
     "type": "git",
